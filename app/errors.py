@@ -1,0 +1,2 @@
+class NotJsonError(Exception):
+    pass
