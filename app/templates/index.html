@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Assignment no.3 </title>
+</head>
+<body>
+    <div class="flex justify-around items-center py-3">
+        <h1 class="text-3xl font-bold">Assignment 3</h1>
+        <a href="/add" class="bg-blue-500
+                text-white rounded-md p-2">Add new record</a>
+    </div>
+
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr class="items-center text-center">
+                <th scope="col" class="px-6 py-3">ID</th>
+                <th scope="col" class="px-6 py-3">Feature 1</th>
+                <th scope="col" class="px-6 py-3">Feature 2</th>
+                <th scope="col" class="px-6 py-3">Feature 3</th>
+                <th scope="col" class="px-6 py-3">Feature 4</th>
+                <th scope="col" class="px-6 py-3">Categorical Feature</th>
+                <th scope="col" class="px-6 py-3">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr class="items-center text-center bg-white border-b
+            dark:bg-gray-800
+            dark:border-gray-700">
+                <td class="px-6 py-4">{{ row.id }}</td>
+                <td class="px-6 py-4">{{ row.feature1 }}</td>
+                <td class="px-6 py-4">{{ row.feature2 }}</td>
+                <td class="px-6 py-4">{{ row.feature3 }}</td>
+                <td class="px-6 py-4">{{ row.feature4 }}</td>
+                <td class="px-6 py-4">{{ row.categorical_feature }}</td>
+                <td class="px-6 py-4">
+                    <form action="/delete/{{ row.id }}"
+                          method="post">
+                        <button type="submit" class="text-white bg-blue-700
+                            hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                            font-medium rounded-lg text-sm px-5 py-2.5
+                            dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none
+                            dark:focus:ring-blue-800">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

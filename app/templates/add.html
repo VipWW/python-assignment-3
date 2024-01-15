@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Assignment 3 - Add</title>
+</head>
+<body>
+    <div class="w-screen h-screen flex flex-col items-center justify-center
+    space-y-5">
+        <h1 class="text-3xl font-bold">Add a new record</h1>
+        <form action="/add" method="post" class="flex flex-col space-y-5 w-64">
+            <input type="number" step="any" name="feature1"
+                   placeholder="Feature 1"
+                   class="border-2 border-gray-300 rounded-md p-2">
+            <input type="number" step="any" name="feature2"
+                   placeholder="Feature 2"
+                   class="border-2 border-gray-300 rounded-md p-2">
+            <input type="number" step="any" name="feature3"
+                   placeholder="Feature 3"
+                   class="border-2 border-gray-300 rounded-md p-2">
+            <input type="number" step="any" name="feature4"
+                   placeholder="Feature 4"
+                   class="border-2 border-gray-300 rounded-md p-2">
+            <input type="number" name="categorical_feature"
+                   placeholder="Categorical Feature"
+                   class="border-2 border-gray-300 rounded-md p-2">
+            <div class="flex justify-between text-center">
+                <input type="submit" value="Add" class="w-20 bg-blue-500
+                text-white rounded-md p-2">
+                <a href="/" class="w-20 bg-red-500 text-white rounded-md
+                p-2">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
